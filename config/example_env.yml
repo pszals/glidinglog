@@ -1,0 +1,5 @@
+development:
+  postgres_url: "postgres_url @path_to_db"
+
+production:
+  postgres_url: "postgres_url @path_to_db"
