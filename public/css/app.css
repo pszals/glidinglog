@@ -1,0 +1,18 @@
+.signup {
+  width: 25%;
+  position: relative;
+  margin: auto;
+  margin-top: 10rem;
+}
+
+.form-field {
+  display: block;
+  float: right;
+  margin: .3rem;
+  padding: .7rem;
+  width: 30rem;
+}
+.form-field__error {
+  text-align: center;
+  color: red;
+}
