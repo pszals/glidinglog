@@ -13,6 +13,17 @@
 
   <body>
     <div class="container">
+      <div class="signup">
+        <form action="/signup" method="POST">
+          <input class="form-field" id="client-entry" size="50" type="text" name="username" placeholder="your@email.com">
+          <input class="form-field" id="client-entry" size="50" type="password" name="password" placeholder="keep it secret, keep it safe">
+          <input class="form-field" type="submit" value="Signup">
+
+          <% if flash.has?(:error) %>
+            <p class="form-field form-field__error"><%= flash[:error] %></p>
+          <% end %>
+        </form>
+      </div>
     </div>
   </body>
 </html>

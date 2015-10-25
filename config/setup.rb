@@ -3,6 +3,7 @@ require 'tilt/erb'
 require 'data_mapper'
 require 'envyable'
 require 'models/user'
+require 'rack-flash'
 
 Envyable.load('./config/env.yml', 'development')
 
