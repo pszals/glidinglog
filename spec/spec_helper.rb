@@ -13,3 +13,10 @@ RSpec.configure do |conf|
   conf.include Rack::Test::Methods
 end
 
+def signup
+  post '/signup', {username: "admin", password: "admin"}
+end
+
+def login
+  post '/login', {username: "admin", password: "admin"}
+end
