@@ -9,10 +9,19 @@
   display: block;
   float: right;
   margin: .3rem;
-  padding: .7rem;
-  width: 30rem;
+  padding: 0 30px;
+  width: 20rem;
 }
+
 .form-field__error {
   text-align: center;
   color: red;
+}
+
+.login-button {
+  background-color: rgba(33, 202, 204, 0.59);
+}
+
+.login-button:hover {
+  background-color: rgba(33, 202, 204, 0.74);
 }
