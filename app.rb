@@ -3,9 +3,8 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require './config/setup'
 
 class GlidingLog < Sinatra::Base
-  enable :sessions
-  use Rack::Flash, sweep: true
   use Rack::Session::Cookie, secret: ENV['rack_session_secret']
+  use Rack::Flash, sweep: true
   use Warden::Manager do |manager|
     manager.default_strategies :password
     manager.failure_app = GlidingLog
@@ -44,7 +43,7 @@ class GlidingLog < Sinatra::Base
       redirect '/'
     else
       User.create(username: username, password: params["password"])
-      redirect '/login'
+      redirect '/flights'
     end
   end
 
@@ -55,13 +54,20 @@ class GlidingLog < Sinatra::Base
   post '/login' do
     warden.authenticate!
 
-    authenticate
     redirect '/flights'
   end
 
   get '/flights' do
-    authenticate
+    warden.authenticate!
+
     erb :flights
+  end
+
+  post '/upload_flight' do
+  end
+
+  post '/unauthenticated' do
+    redirect to('/login')
   end
 
   def warden
